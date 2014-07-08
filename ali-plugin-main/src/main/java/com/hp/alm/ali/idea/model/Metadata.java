@@ -90,7 +90,7 @@ public class Metadata {
         RestService restService = project.getComponent(RestService.class);
 
         if(load) {
-            InputStream is = restService.getForStream("customization/entities/{0}/fields", entityName);
+            InputStream is = restService.getForStream("customization/entities/{0}/fields?alt=application/xml", entityName);
             for(Field field: FieldList.create(is)) {
                 allFields.put(field.getName(), field);
             }

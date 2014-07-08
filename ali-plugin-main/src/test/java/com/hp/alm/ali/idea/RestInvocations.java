@@ -31,7 +31,7 @@ public class RestInvocations {
     }
 
     public static void loadMetadata(Handler handler, String entityType) {
-        handler.addRequest(false, "GET", "/qcbin/rest/domains/domain/projects/project/customization/entities/" + entityType + "/fields", 200)
+        handler.addRequest(false, "GET", "/qcbin/rest/domains/domain/projects/project/customization/entities/" + entityType + "/fields?alt=application/xml", 200)
                 .content("customization_" + shortName(entityType, handler.getVersion()) + "_fields.xml");
 
         switch (handler.getVersion()) {
